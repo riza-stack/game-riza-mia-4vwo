@@ -18,3 +18,8 @@ def WillekeurigWoord(W):
         l1.append(i)
         l2.append('_')
     return(l1,l2)
+
+def ToonWoord(l2):
+    for i in l2:
+        print(i, end=" ")
+    print("")
