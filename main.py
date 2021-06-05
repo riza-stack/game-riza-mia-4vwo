@@ -25,3 +25,7 @@ def ToonWoord(l2):
     for i in l2:
         print(i, end=" ")
     print("")
+
+
+while pogingen > 0:
+        letter = input("raad een letter:\n")
