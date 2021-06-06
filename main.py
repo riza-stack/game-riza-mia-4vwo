@@ -1,5 +1,63 @@
 import random
 
+def tekening(p):
+    lijst = [  """
+                   --------
+                   |      |
+                   |      O
+                   |     \ /
+                   |      |
+                   |     / \\
+                   -
+                   """,
+                   """
+                   --------
+                   |      |
+                   |      O
+                   |     \ /
+                   |      |
+                   |     / 
+                   -
+                   """,
+                   """
+                   --------
+                   |      |
+                   |      O
+                   |     \ /
+                   |      |
+                   |     
+                   -
+                   """,
+                   """
+                  --------
+                   |      |
+                   |      O
+                   |     \ /
+                   |      
+                   |      
+                   -
+                   """,
+                   """
+                   --------
+                   |      |
+                   |      O
+                   |
+                   |
+                   |
+                   -
+                   """,
+                   """
+                   --------
+                   |      |
+                   |      
+                   |
+                   |
+                   |
+                   -
+                   """
+    ]
+    return lijst[p]
+
 def start():
     p=5
     print("Leuk, we gaan galgje spelen!")
@@ -50,3 +108,4 @@ def SpeelSpel():
         if "_" not in list2:
             print("je hebt het woord geraden!")
             break
+SpeelSpel()
