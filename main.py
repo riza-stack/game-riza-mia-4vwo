@@ -63,9 +63,14 @@ def start():
    WoordenLijst=['informatica', 'informatiekunde', 'spelletje','aardigheidje', 'scholier', 'fotografie','waardebepaling', 'specialiteit','verzekering', 'universiteit']
    p=5
    l=[]
+
+   # Introductie spel
    print("Leuk, we gaan galgje spelen!")
    print("Je mag %s keer fout raden" %(p))
+   
+   # Tekening galge printen
    print("%s"%(tekening(p)))
+
    return(p,WoordenLijst,l)
 
 
@@ -95,6 +100,7 @@ def SpeelSpel():
     ToonWoord(list2)
 
     while pogingen > 0:
+       # Toont geprobeerde letters aan
         print('je hebt de volgende letters al geprobeerd: %s'%(GeprobeerdeLetters))
         letter = GeefLetter(GeprobeerdeLetters)
         GeprobeerdeLetters.append(letter)
@@ -121,7 +127,7 @@ def SpeelSpel():
             
 def game():
   again = input("Wil je opnieuw spelen? typ (ja/nee)")
-  # als je wil, nog een keer spelen
+  # game loop
   if again == "ja":
     SpeelSpel()
   else:
