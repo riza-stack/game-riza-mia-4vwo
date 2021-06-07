@@ -58,6 +58,7 @@ def tekening(p):
     ]
     return lijst[p]
 
+
 def start():
    WoordenLijst=['informatica', 'informatiekunde', 'spelletje','aardigheidje', 'scholier', 'fotografie','waardebepaling', 'specialiteit','verzekering', 'universiteit']
    p=5
@@ -117,4 +118,14 @@ def SpeelSpel():
         if "_" not in list2:
             print("je hebt het woord geraden!")
             break
+            
+def game():
+  again = input("Wil je opnieuw spelen? typ (ja/nee)")
+  # als je wil, nog een keer spelen
+  if again == "ja":
+    SpeelSpel()
+  else:
+    print("THE END")
+
 SpeelSpel()
+game()
