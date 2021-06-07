@@ -59,11 +59,13 @@ def tekening(p):
     return lijst[p]
 
 def start():
-    p=5
-    print("Leuk, we gaan galgje spelen!")
-    print("Je mag %s keer fout raden" %(p))
-    print("%s"%(tekening(p)))
-    return(p)
+   WoordenLijst=['informatica', 'informatiekunde', 'spelletje','aardigheidje', 'scholier', 'fotografie','waardebepaling', 'specialiteit','verzekering', 'universiteit']
+   p=5
+   l=[]
+   print("Leuk, we gaan galgje spelen!")
+   print("Je mag %s keer fout raden" %(p))
+   print("%s"%(tekening(p)))
+   return(p,WoordenLijst,l)
 
 
 def WillekeurigWoord(W):
@@ -80,14 +82,21 @@ def ToonWoord(l2):
         print(i, end=" ")
     print("")
 
+def GeefLetter(AlGeprobeerd):
+  letter= input('raad een letter:\n')
+  while letter in AlGeprobeerd:
+     letter= input('Die letter heb je eerder al geprobeerd, raad een letter die je niet al eerder hebt geporbeerd:\n')
+  return letter
+
 def SpeelSpel():
-    pogingen=start()
-    WoordenLijst=['informatica', 'informatiekunde', 'spelletje','aardigheidje', 'scholier', 'fotografie','waardebepaling', 'specialiteit','verzekering', 'universiteit']
+    pogingen,WoordenLijst, GeprobeerdeLetters=start()
     list1,list2=WillekeurigWoord(WoordenLijst)
     ToonWoord(list2)
 
     while pogingen > 0:
-        letter = input("raad een letter:\n")
+        print('je hebt de volgende letters al geprobeerd: %s'%(GeprobeerdeLetters))
+        letter = GeefLetter(GeprobeerdeLetters)
+        GeprobeerdeLetters.append(letter)
         if letter in list1:
             print('goed geraden!')
             index=-1
