@@ -89,10 +89,15 @@ def ToonWoord(l2):
     print("")
 
 def GeefLetter(AlGeprobeerd):
-  letter= input('raad een letter:\n')
-  while letter in AlGeprobeerd:
-     letter= input('Die letter heb je eerder al geprobeerd, raad een letter die je niet al eerder hebt geporbeerd:\n')
-  return letter
+    letter = input("raad een letter:\n")
+    while 'TRUE':
+        if letter in AlGeprobeerd:
+            letter = input("Die letter heb je eerder al geprobeerd, raad een letter die je niet al eerder hebt geprobeerd:\n")
+        elif not (letter.isalpha() and len(letter)==1):
+            letter = input("ongeldige input, probeer iets anders:\n")
+        elif 'TRUE':
+            break
+    return letter
 
 def SpeelSpel():
     pogingen,WoordenLijst, GeprobeerdeLetters=start()
