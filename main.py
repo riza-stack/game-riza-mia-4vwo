@@ -71,9 +71,10 @@ def start():
    # Tekening galge printen
    print("%s"%(tekening(p)))
 
+   # Geeft terug aantal pogingen, letters en streepjes
    return(p,WoordenLijst,l)
 
-
+# Computer kiest woord en tekent streepjes
 def WillekeurigWoord(W):
     woord=random.choice(W)
     l1=[]
@@ -83,11 +84,13 @@ def WillekeurigWoord(W):
         l2.append('_')
     return(l1,l2)
 
+# Letter komt op de goede plek
 def ToonWoord(l2):
     for i in l2:
         print(i, end=" ")
     print("")
 
+# Geweldige input validatie
 def GeefLetter(AlGeprobeerd):
     letter = input("raad een letter:\n")
     while 'TRUE':
@@ -99,6 +102,7 @@ def GeefLetter(AlGeprobeerd):
             break
     return letter
 
+
 def SpeelSpel():
     pogingen,WoordenLijst, GeprobeerdeLetters=start()
     list1,list2=WillekeurigWoord(WoordenLijst)
@@ -109,6 +113,8 @@ def SpeelSpel():
         print('je hebt de volgende letters al geprobeerd: %s'%(GeprobeerdeLetters))
         letter = GeefLetter(GeprobeerdeLetters)
         GeprobeerdeLetters.append(letter)
+
+        # Controleert of input in woord zit 
         if letter in list1:
             print('goed geraden!')
             index=-1
