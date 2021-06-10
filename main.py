@@ -114,6 +114,10 @@ def SpeelSpel():
         letter = GeefLetter(GeprobeerdeLetters)
         GeprobeerdeLetters.append(letter)
 
+        # Letters op alfabetische volgorde
+        GeprobeerdeLetters.sort()
+        print(GeprobeerdeLetters)
+
         # Controleert of input in woord zit 
         if letter in list1:
             print('goed geraden!')
@@ -138,7 +142,7 @@ def SpeelSpel():
             
 def game():
   again = input("Wil je opnieuw spelen? typ (ja/nee)")
-  # game loop
+  # Game loop
   if again == "ja":
     SpeelSpel()
   else:
